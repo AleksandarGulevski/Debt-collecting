@@ -8,7 +8,6 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Entity
 @Getter
@@ -42,7 +41,7 @@ public class Debtor implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return 31;
     }
 
     @Override
