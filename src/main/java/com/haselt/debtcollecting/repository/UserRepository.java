@@ -1,4 +1,7 @@
 package com.haselt.debtcollecting.repository;
 
-public interface UserRepository {
+import com.haselt.debtcollecting.entity.User;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 }

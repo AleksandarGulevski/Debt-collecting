@@ -8,6 +8,8 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -30,6 +32,23 @@ public class Debtor implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany(
+            mappedBy = "debtor",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Invoice> invoices = new ArrayList<>();
+
+    public void addInvoice(Invoice invoice) {
+        invoices.add(invoice);
+        invoice.setDebtor(this);
+    }
+
+    public void removeInvoice(Invoice invoice) {
+        invoices.remove(invoice);
+        invoice.setDebtor(null);
+    }
 
     @Override
     public boolean equals(Object o) {
