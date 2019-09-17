@@ -21,14 +21,14 @@ public class Swagger2Config {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("com.haselt.appointapp"))
+                        .basePackage("com.haselt.debtcollection"))
                 .paths(PathSelectors.regex("/api/v1/.*"))
                 .build().apiInfo(apiEndPointsInfo());
     }
 
     private ApiInfo apiEndPointsInfo() {
-        return new ApiInfoBuilder().title("Appoint App API doc")
-                .description("The API doc for Appoint App Web and API project")
+        return new ApiInfoBuilder().title("Debt Collection App API doc")
+                .description("The API doc for Debt Collection App Web and API project")
                 .contact(new Contact("Aleksandar Gulevski", "www.haselt.com", "aleksandar.gulevski@haselt.com"))
                 .version("1.0.0")
                 .build();

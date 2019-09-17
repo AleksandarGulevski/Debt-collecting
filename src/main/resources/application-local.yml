@@ -22,7 +22,7 @@ spring:
     username: debtcollectorapp
     password: debtcollector@haselt
     testWhileIdle: true
-    validationQuery: SELECT 1
+    validationQuery: SELECT 1 #check what this does
   jpa:
     database: POSTGRESQL
     show-sql: false
