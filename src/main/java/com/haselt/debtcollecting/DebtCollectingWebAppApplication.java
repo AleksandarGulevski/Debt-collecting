@@ -9,5 +9,4 @@ public class DebtCollectingWebAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DebtCollectingWebAppApplication.class, args);
 	}
-
 }

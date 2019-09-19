@@ -10,12 +10,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-@Entity
+
 @Getter
 @Setter
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Invoice implements Serializable {
 
     @Id
