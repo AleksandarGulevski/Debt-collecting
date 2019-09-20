@@ -53,4 +53,5 @@ public class Invoice implements Serializable {
                 ", date=" + date +
                 '}';
     }
-}
+
+ }

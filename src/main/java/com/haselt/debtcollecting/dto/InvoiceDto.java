@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Value
 @Builder
@@ -20,6 +20,6 @@ public class InvoiceDto implements Serializable {
     @NotNull(message = "You must enter an amount for the invoice")
     private final double amount;
     @NotNull(message = "Invoice date is missing")
-    private final LocalDateTime date;
+    private final LocalDate date;
 
 }
