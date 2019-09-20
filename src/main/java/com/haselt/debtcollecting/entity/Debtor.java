@@ -26,6 +26,7 @@ public class Debtor implements Serializable {
     private String lastName;
     private String email;
     private String iban;
+    private String ssn;
 
 
 

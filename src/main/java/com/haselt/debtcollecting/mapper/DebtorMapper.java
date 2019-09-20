@@ -10,7 +10,8 @@ public class DebtorMapper {
                 .setFirstName(debtorDto.getFirstName())
                 .setLastName(debtorDto.getLastName())
                 .setEmail(debtorDto.getEmail())
-                .setIban(debtorDto.getIban());
+                .setIban(debtorDto.getIban())
+                .setSsn(debtorDto.getSsn());
         return debtor;
     }
 
@@ -20,6 +21,7 @@ public class DebtorMapper {
                 .lastName(debtor.getLastName())
                 .email(debtor.getEmail())
                 .iban(debtor.getIban())
+                .ssn((debtor.getSsn()))
                 .build();
         return debtorDto;
     }

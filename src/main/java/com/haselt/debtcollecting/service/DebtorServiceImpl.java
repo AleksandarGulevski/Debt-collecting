@@ -30,10 +30,10 @@ public class DebtorServiceImpl implements DebtorService {
     @Override
     public Debtor create(DebtorDto debtorDto) {
         Debtor debtor = DebtorMapper.dtoToEntity(debtorDto);
-        Optional<Debtor> debtorOptional = debtorRepository.findByFirstNameAndLastName(debtorDto.getFirstName(), debtorDto.getLastName());
+        Optional<Debtor> debtorOptional = debtorRepository.findBySsn(debtorDto.getSsn());
         if (debtorOptional.isPresent()){
             throw new DebtorAlreadyExistisException(
-            ErrorCode.DEBTOR_AREADY_EXISTS, "Debtor with that first and last name already exists");
+            ErrorCode.DEBTOR_AREADY_EXISTS, "Debtor with that Social Security Number already exists");
         }
         return debtorRepository.save(debtor);
     }

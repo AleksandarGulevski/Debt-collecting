@@ -24,4 +24,7 @@ public class DebtorDto implements Serializable {
     private final String email;
     @NotNull(message = "IBAN missing")
     private final String iban;
+    @NotBlank(message = "Social Security Number missing")
+    @Length(message = "Length must be 15 characters", max = 15, min = 15)
+    private final String ssn;
 }

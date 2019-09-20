@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface DebtorRepository extends PagingAndSortingRepository<Debtor, Long> {
 
-    Optional<Debtor> findByFirstNameAndLastName(String firstName, String lastName);
+    Optional<Debtor> findBySsn(String ssn);
 }
