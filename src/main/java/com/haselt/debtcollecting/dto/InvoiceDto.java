@@ -18,7 +18,7 @@ public class InvoiceDto implements Serializable {
     @Length(message = "Status can be: open, paid, overdue or canceled", max = 8)
     private final String status;
     @NotNull(message = "You must enter an amount for the invoice")
-    private final double amount;
+    private final Double amount;
     @NotNull(message = "Invoice date is missing")
     private final LocalDate date;
 

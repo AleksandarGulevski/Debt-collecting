@@ -18,7 +18,7 @@ spring:
   datasource:
     platform: postgres
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/debtcollectorapp
+    url: jdbc:postgresql://localhost:5432/debtcollector
     username: debtcollectorapp
     password: debtcollector@haselt
     testWhileIdle: true
