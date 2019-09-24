@@ -22,6 +22,7 @@ public class DebtorMapper {
                 .email(debtor.getEmail())
                 .iban(debtor.getIban())
                 .ssn((debtor.getSsn()))
+                .id(debtor.getId())
                 .build();
         return debtorDto;
     }

@@ -9,8 +9,7 @@ import java.io.Serializable;
 
 @Value
 @Builder
-public class DebtorDto implements Serializable {
-
+public class UserDto implements Serializable {
     private final Long id;
     @NotBlank(message = "First name missing")
     @Length(message = "Maximum length 100 characters", max = 100)
@@ -21,10 +20,5 @@ public class DebtorDto implements Serializable {
     @NotBlank(message = "Email address missing")
     @Length(message = "Maximum characters reached", max = 100)
     private final String email;
-    @NotBlank(message = "IBAN number missing")
-    @Length(message = "Maximum characters reached", max = 100)
-    private final String iban;
-    @NotBlank(message = "Social Security Number missing")
-    @Length(message = "Length must be 15 characters", max = 15, min = 15)
-    private final String ssn;
+
 }

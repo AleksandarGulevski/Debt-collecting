@@ -9,7 +9,7 @@ public class InvoiceMapper {
         Invoice invoice = new Invoice()
                 .setStatus(invoiceDto.getStatus())
                 .setAmount(invoiceDto.getAmount())
-                .setDate(invoiceDto.getDate());
+                .setDueDate(invoiceDto.getDueDate());
         return invoice;
     }
 
@@ -17,7 +17,8 @@ public class InvoiceMapper {
         InvoiceDto invoiceDto = InvoiceDto.builder()
                 .status(invoice.getStatus())
                 .amount(invoice.getAmount())
-                .date(invoice.getDate())
+                .dueDate(invoice.getDueDate())
+                .id(invoice.getId())
                 .build();
         return invoiceDto;
     }

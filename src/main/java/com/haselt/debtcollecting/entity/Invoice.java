@@ -8,6 +8,7 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
@@ -23,8 +24,9 @@ public class Invoice implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String status;
-    private Double amount;
-    private LocalDate date;
+    private BigDecimal amount;
+    @Column(name = "duedate")
+    private LocalDate dueDate;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -50,7 +52,7 @@ public class Invoice implements Serializable {
                 "id=" + id +
                 ", status='" + status + '\'' +
                 ", amount=" + amount +
-                ", date=" + date +
+                ", dueDate=" + dueDate +
                 '}';
     }
 
