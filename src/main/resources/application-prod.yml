@@ -1,35 +1,35 @@
 
-logging:
-  level:
-    root: INFO
-      com.haselt.debtcollecting.web: INFO
-    org:
-      hibernate:
-        # Set Statistics level
-        stat: ERROR
-        SQL: ERROR
-        type:
-          descriptor:
-            sql: ERROR
+          logging:
+            level:
+              root: INFO
+                com.haselt.debtcollecting.web: INFO
+              org:
+                hibernate:
+                  # Set Statistics level
+                  stat: ERROR
+                  SQL: ERROR
+                  type:
+                    descriptor:
+                      sql: ERROR
 
-spring:
-  datasource:
-    platform: postgres
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/debtcollectorapp
-    username: debtcollectorapp
-    password: <SOME_RANDOM_PASSWORD>
-    testWhileIdle: true
-    validationQuery: SELECT 1
-  jpa:
-    database: POSTGRESQL
-    show-sql: false
-    hibernate:
-      generate-ddl: false
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-    #Turn Statistics on
-    properties:
-      hibernate:
-        jdbc:
-          time_zone: UTC
-        generate_statistics: false
+          spring:
+            datasource:
+              platform: postgres
+              driverClassName: org.postgresql.Driver
+              url: jdbc:postgresql://localhost:5432/debtcollectorapp
+              username: debtcollectorapp
+              password: <SOME_RANDOM_PASSWORD>
+              testWhileIdle: true
+              validationQuery: SELECT 1
+            jpa:
+              database: POSTGRESQL
+              show-sql: false
+              hibernate:
+                generate-ddl: false
+                naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+              #Turn Statistics on
+              properties:
+                hibernate:
+                  jdbc:
+                    time_zone: UTC
+                  generate_statistics: false

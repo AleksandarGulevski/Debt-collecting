@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -94,5 +95,21 @@ public class UserServiceImpl implements UserService {
     public User getUserById(long userId) {
         return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException(
                 ErrorCode.USER_NOT_FOUND, "User with id " + userId + " not found!"));
+    }
+
+    @Override
+    public List<Debtor> findByFirstNameStartingWith(String prefix) {
+        return debtorRepository.findByFirstNameStartingWith(prefix);
+    }
+
+
+    @Override
+    public List<Debtor> findByLastNameIs(String name) {
+        return debtorRepository.findByLastNameIs(name);
+    }
+
+    @Override
+    public List<User> findUsersByLastName(String lastName) {
+        return userRepository.findByLastNameIs(lastName);
     }
 }

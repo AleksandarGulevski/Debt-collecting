@@ -12,9 +12,7 @@ import com.haselt.debtcollecting.util.ErrorCode;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @AllArgsConstructor
 @Service
@@ -63,6 +61,22 @@ public class DebtorServiceImpl implements DebtorService {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         ErrorCode.INVOICE_NOT_FOUND, "Invoice with id " + id + " not found!"));
     }
+
+    @Override
+    public List<Invoice> findTop3ByOrderByAmount() {
+        return invoiceRepository.findTop3ByOrderByAmount();
+    }
+
+    @Override
+    public List<Invoice> findByAmountOrderByAmountAsc() {
+        return invoiceRepository.findByOrderByAmountAsc();
+    }
+
+    @Override
+    public List<Invoice> findByAmountOrderByAmountDesc() {
+        return invoiceRepository.findByOrderByAmountDesc();
+    }
+
 
     public Debtor getDebtorById(long id) {
         return debtorRepository.findById(id)

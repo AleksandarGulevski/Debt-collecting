@@ -16,4 +16,8 @@ public interface ErrorCode {
     //INVOICE
     int INVOICE_NOT_FOUND = 300;
     int INVOICE_DELETING_UNSUCCESSFUL = 301;
+
+
+    //INVOICE ITEM
+    int INVOICE_ITEM_NOT_FOUND = 350;
 }

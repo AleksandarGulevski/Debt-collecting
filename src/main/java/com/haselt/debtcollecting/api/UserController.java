@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -47,5 +48,26 @@ public class UserController {
     @GetMapping(value = "/debtors/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public DebtorDto getDebtorById(@PathVariable("id") long id) {
         return DebtorMapper.entityToDto(userService.getDebtorById(id));
+    }
+
+    @GetMapping(value = "/debtors/sort/firstname/{firstname}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<DebtorDto> findByNameStartingWith(@PathVariable("firstname") String prefix) {
+        return userService.findByFirstNameStartingWith(prefix).stream()
+                .map(item -> DebtorMapper.entityToDto(item))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping(value = "/debtors/sort/lastname/{lastname}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<DebtorDto> findByLastNameIs(@PathVariable("lastname") String lastName) {
+        return userService.findByLastNameIs(lastName).stream()
+                .map(item -> DebtorMapper.entityToDto(item))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping(value = "/{lastname}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<UserDto> findByUserLastNameIs(@PathVariable("lastname") String lastName) {
+        return userService.findUsersByLastName(lastName).stream()
+                .map(item -> UserMapper.entityToDto(item))
+                .collect(Collectors.toList());
     }
 }

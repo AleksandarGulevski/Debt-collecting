@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.Set;
 
 @Transactional
@@ -27,4 +28,10 @@ public interface UserService {
     void deleteDebtor(final long id);
 
     Set<Debtor> getAllDebtors(final long userId);
+
+    List<Debtor> findByFirstNameStartingWith(String prefix);
+
+    List<Debtor> findByLastNameIs(String name);
+
+    List<User> findUsersByLastName(String name);
 }
